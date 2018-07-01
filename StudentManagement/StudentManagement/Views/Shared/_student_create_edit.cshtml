@@ -1,0 +1,108 @@
+﻿@model StudentManagement.Models.StudentDetail
+
+
+	<table>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentFirstName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentFirstName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentFirstName, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.StudnetMiddleName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudnetMiddleName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudnetMiddleName, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentLastName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentLastName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentLastName, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.StudentDateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentDateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentDateOfBirth, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.GenderId, "GenderId", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.DropDownList("GenderId", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.GenderId, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.StudentMaritialStatus, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentMaritialStatus, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentMaritialStatus, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentPhoneNo, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentPhoneNo, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentPhoneNo, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.StudentMobileNo, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentMobileNo, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentMobileNo, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.SrudentEmail, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.SrudentEmail, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.SrudentEmail, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.FacultyID, "FacultyID", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.DropDownList("FacultyID", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.FacultyID, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentNationality, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentNationality, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentNationality, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.BloodGroupId, "BloodGroupId", htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.DropDownList("BloodGroupId", null, htmlAttributes: new { @class = "form-control" })
+				@Html.ValidationMessageFor(model => model.BloodGroupId, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentParentFirstName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentParentFirstName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentParentFirstName, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.StudentParentMiddleName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentParentMiddleName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentParentMiddleName, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentParentLastName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentParentLastName, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentParentLastName, "", new { @class = "text-danger" })
+			</td>
+			<th>@Html.LabelFor(model => model.StudentParentMobileNo, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentParentMobileNo, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentParentMobileNo, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+		<tr>
+			<th>@Html.LabelFor(model => model.StudentAddress, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+			<td>
+				@Html.EditorFor(model => model.StudentAddress, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.StudentAddress, "", new { @class = "text-danger" })
+			</td>
+		</tr>
+	</table>

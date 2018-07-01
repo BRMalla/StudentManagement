@@ -1,0 +1,87 @@
+﻿@model IEnumerable<StudentManagement.Models.Account>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_middle_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_middle_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee_last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount_Paid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remark)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccountUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_middle_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_middle_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount_Paid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remark)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AccountID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AccountID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AccountID })
+        </td>
+    </tr>
+}
+
+</table>

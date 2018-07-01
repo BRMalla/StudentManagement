@@ -1,0 +1,98 @@
+﻿@model StudentManagement.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_middle_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_middle_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_middle_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_middle_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount_Paid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount_Paid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

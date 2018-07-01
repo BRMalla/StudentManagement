@@ -1,0 +1,160 @@
+﻿@model StudentManagement.Models.StudentDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>StudentDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudnetMiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudnetMiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentDateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentDateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentNationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentNationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentMaritialStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentMaritialStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentMobileNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentMobileNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SrudentEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SrudentEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentParentFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentParentFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentParentMiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentParentMiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentParentLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentParentLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentParentMobileNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentParentMobileNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroup.BloodGroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup.BloodGroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Faculty.FacultyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faculty.FacultyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.GenderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.GenderName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

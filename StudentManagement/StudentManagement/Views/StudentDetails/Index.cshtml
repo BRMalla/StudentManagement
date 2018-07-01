@@ -1,0 +1,135 @@
+﻿@model IEnumerable<StudentManagement.Models.StudentDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+	@using (Html.BeginForm("Index", "StudentDetails", FormMethod.Get))
+	{
+		<label>Select by Faculty</label>@Html.DropDownList("fac", "All")
+		<input type="submit" value="Search" />
+		<input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
+	}
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudnetMiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentDateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentNationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentMaritialStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentPhoneNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentMobileNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SrudentEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentParentFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentParentMiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentParentLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentParentMobileNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup.BloodGroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faculty.FacultyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender.GenderName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudnetMiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentDateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentNationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentMaritialStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPhoneNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentMobileNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SrudentEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentParentFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentParentMiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentParentLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentParentMobileNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroup.BloodGroupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Faculty.FacultyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender.GenderName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentID })
+        </td>
+    </tr>
+}
+
+</table>

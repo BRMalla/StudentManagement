@@ -1,0 +1,102 @@
+﻿@model StudentManagement.Models.Account
+
+<div class="panel panel-default">
+	<div class="panel panel-heading">
+		<h3>
+			Student Account
+		</h3>
+	</div>
+	<div class="panel-body">
+		<table>
+			<tr>
+				<th>@Html.LabelFor(model => model.AccountUserName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.AccountUserName, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.AccountUserName, "", new { @class = "text-danger" })
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="panel panel-body">
+		<table>
+			<tr>
+				<th>@Html.LabelFor(model => model.Student_first_name, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Student_first_name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Student_first_name, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Student_middle_name, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Student_middle_name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Student_middle_name, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Student_last_name, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Student_last_name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Student_last_name, "", new { @class = "text-danger" })
+				</td>
+			</tr>
+			<tr>
+				<th>@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Amount_Paid, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Amount_Paid, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Amount_Paid, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.TextAreaFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel panel-heading">
+		<h3>Employee Account</h3>
+	</div>
+	<div class="panel panel-body">
+		<table>
+			<tr>
+				<th>@Html.LabelFor(model => model.Employee_first_name, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Employee_first_name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Employee_first_name, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Employee_middle_name, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Employee_middle_name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Employee_middle_name, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Employee_last_name, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Employee_last_name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Employee_last_name, "", new { @class = "text-danger" })
+				</td>
+			</tr>
+			<tr>
+				<th>@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Amount_Paid, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.EditorFor(model => model.Amount_Paid, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Amount_Paid, "", new { @class = "text-danger" })
+				</td>
+				<th>@Html.LabelFor(model => model.Remark, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+				<td>
+					@Html.TextAreaFor(model => model.Remark, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Remark, "", new { @class = "text-danger" })
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Student_first_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Student_middle_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Student_last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_first_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_middle_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Amount_Paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BloodGroup">
+    <Key>
+      <PropertyRef Name="BloodGroupId" />
+    </Key>
+    <Property Name="BloodGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BloodGroupName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Employee_First_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Middle_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Last_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="Employee_Date_of_Birth" Type="date" />
+    <Property Name="Employee_Parment_Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Mobile_No" Type="int" />
+    <Property Name="Employee_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Parents_First_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Parents_Middle_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Parents_Last_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Rank" Type="nvarchar" MaxLength="50" />
+    <Property Name="Employee_Photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="FacultyID" />
+    </Key>
+    <Property Name="FacultyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacultyName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Frontend_Image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image_Path" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Frontend_message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message_Image_Path" Type="nvarchar(max)" />
+    <Property Name="Message_description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Marksheet">
+    <Key>
+      <PropertyRef Name="marksheetID" />
+    </Key>
+    <Property Name="marksheetID" Type="int" Nullable="false" />
+    <Property Name="StudentID" Type="int" />
+    <Property Name="FacultyID" Type="int" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Middle_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Last_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Full_marks" Type="int" />
+    <Property Name="Pass_marks" Type="int" />
+    <Property Name="Marks_obtain" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Subject_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Notice">
+    <Key>
+      <PropertyRef Name="NoticeId" />
+    </Key>
+    <Property Name="NoticeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Publish_Date" Type="date" />
+    <Property Name="DepartmentID" Type="int" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StudentDetail">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudnetMiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentDateOfBirth" Type="date" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="StudentNationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentMaritialStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="BloodGroupId" Type="int" />
+    <Property Name="StudentPhoneNo" Type="int" />
+    <Property Name="StudentMobileNo" Type="int" />
+    <Property Name="SrudentEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentParentFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentParentMiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentParentLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentParentMobileNo" Type="int" />
+    <Property Name="FacultyID" Type="int" />
+    <Property Name="StudentAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Student_photo" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Employee_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marksheet_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="Marksheet" Type="Self.Marksheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="FacultyID" />
+      </Principal>
+      <Dependent Role="Marksheet">
+        <PropertyRef Name="FacultyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marksheet_StudentDetail">
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="0..1" />
+    <End Role="Marksheet" Type="Self.Marksheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentDetail">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Marksheet">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDetail_BloodGroup">
+    <End Role="BloodGroup" Type="Self.BloodGroup" Multiplicity="0..1" />
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BloodGroup">
+        <PropertyRef Name="BloodGroupId" />
+      </Principal>
+      <Dependent Role="StudentDetail">
+        <PropertyRef Name="BloodGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDetail_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="FacultyID" />
+      </Principal>
+      <Dependent Role="StudentDetail">
+        <PropertyRef Name="FacultyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDetail_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="StudentDetail">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="inputmarks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="studentId" Type="int" Mode="In" />
+    <Parameter Name="facultyId" Type="int" Mode="In" />
+    <Parameter Name="first_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="middle_name" Type="nvarchar" Mode="In" />
+    <Parameter Name="last_name" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SMSModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BloodGroup" EntityType="Self.BloodGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Frontend_Image" EntityType="Self.Frontend_Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Frontend_message" EntityType="Self.Frontend_message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marksheet" EntityType="Self.Marksheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notice" EntityType="Self.Notice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentDetail" EntityType="Self.StudentDetail" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Employee_Gender" Association="Self.FK_Employee_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marksheet_Faculty" Association="Self.FK_Marksheet_Faculty">
+      <End Role="Faculty" EntitySet="Faculty" />
+      <End Role="Marksheet" EntitySet="Marksheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marksheet_StudentDetail" Association="Self.FK_Marksheet_StudentDetail">
+      <End Role="StudentDetail" EntitySet="StudentDetail" />
+      <End Role="Marksheet" EntitySet="Marksheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDetail_BloodGroup" Association="Self.FK_StudentDetail_BloodGroup">
+      <End Role="BloodGroup" EntitySet="BloodGroup" />
+      <End Role="StudentDetail" EntitySet="StudentDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDetail_Faculty" Association="Self.FK_StudentDetail_Faculty">
+      <End Role="Faculty" EntitySet="Faculty" />
+      <End Role="StudentDetail" EntitySet="StudentDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDetail_Gender" Association="Self.FK_StudentDetail_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="StudentDetail" EntitySet="StudentDetail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

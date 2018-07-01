@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StudentManagement.Models.Frontend_message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Message_Image_Path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message_description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message_Image_Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message_description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MessageId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MessageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MessageId })
+        </td>
+    </tr>
+}
+
+</table>

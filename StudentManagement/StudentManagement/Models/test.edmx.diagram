@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a50ba4f6deaf4938aca64b79178701c4" Name="Diagram1">
+        <EntityTypeShape EntityType="SMSModel.BloodGroup" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Department" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Faculty" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Gender" Width="1.5" PointX="3.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.StudentDetail" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="SMSModel.FK_StudentDetail_BloodGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_StudentDetail_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_StudentDetail_Gender" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SMSModel.Account" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SMSModel.Employee" Width="1.5" PointX="6" PointY="11.5" />
+        <EntityTypeShape EntityType="SMSModel.Frontend_Image" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SMSModel.Frontend_message" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SMSModel.Marksheet" Width="1.5" PointX="8.25" PointY="5.75" />
+        <EntityTypeShape EntityType="SMSModel.Notice" Width="1.5" PointX="10.375" PointY="3.75" />
+        <AssociationConnector Association="SMSModel.FK_Employee_Gender" />
+        <AssociationConnector Association="SMSModel.FK_Marksheet_Faculty" />
+        <AssociationConnector Association="SMSModel.FK_Marksheet_StudentDetail" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

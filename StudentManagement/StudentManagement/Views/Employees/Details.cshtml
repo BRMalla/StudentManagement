@@ -1,0 +1,130 @@
+﻿@model StudentManagement.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Middle_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Middle_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Date_of_Birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Date_of_Birth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Parment_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Parment_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Mobile_No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Mobile_No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Parents_First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Parents_First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Parents_Middle_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Parents_Middle_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Parents_Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Parents_Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Rank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Rank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Photo)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Employee_Photo)" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.GenderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.GenderName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

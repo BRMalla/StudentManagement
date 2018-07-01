@@ -1,0 +1,90 @@
+﻿@model StudentManagement.Models.Marksheet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Marksheet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Middle_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Middle_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Full_marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Full_marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pass_marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pass_marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks_obtain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marks_obtain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Faculty.FacultyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faculty.FacultyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentDetail.StudentFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentDetail.StudentFirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.marksheetID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

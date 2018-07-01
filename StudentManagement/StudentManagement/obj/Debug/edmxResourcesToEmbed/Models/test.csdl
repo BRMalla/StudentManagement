@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BloodGroup">
+    <Key>
+      <PropertyRef Name="BloodGroupId" />
+    </Key>
+    <Property Name="BloodGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BloodGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StudentDetails" Relationship="Self.FK_StudentDetail_BloodGroup" FromRole="BloodGroup" ToRole="StudentDetail" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="FacultyID" />
+    </Key>
+    <Property Name="FacultyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacultyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StudentDetails" Relationship="Self.FK_StudentDetail_Faculty" FromRole="Faculty" ToRole="StudentDetail" />
+    <NavigationProperty Name="Marksheets" Relationship="SMSModel.FK_Marksheet_Faculty" FromRole="Faculty" ToRole="Marksheet" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StudentDetails" Relationship="Self.FK_StudentDetail_Gender" FromRole="Gender" ToRole="StudentDetail" />
+    <NavigationProperty Name="Employees" Relationship="SMSModel.FK_Employee_Gender" FromRole="Gender" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="StudentDetail">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudnetMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentDateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="GenderId" Type="Int32" />
+    <Property Name="StudentNationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentMaritialStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BloodGroupId" Type="Int32" />
+    <Property Name="StudentPhoneNo" Type="Int32" />
+    <Property Name="StudentMobileNo" Type="Int32" />
+    <Property Name="SrudentEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentParentFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentParentMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentParentLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentParentMobileNo" Type="Int32" />
+    <Property Name="FacultyID" Type="Int32" />
+    <Property Name="StudentAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BloodGroup" Relationship="Self.FK_StudentDetail_BloodGroup" FromRole="StudentDetail" ToRole="BloodGroup" />
+    <NavigationProperty Name="Faculty" Relationship="Self.FK_StudentDetail_Faculty" FromRole="StudentDetail" ToRole="Faculty" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_StudentDetail_Gender" FromRole="StudentDetail" ToRole="Gender" />
+    <Property Name="Student_photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Marksheets" Relationship="SMSModel.FK_Marksheet_StudentDetail" FromRole="StudentDetail" ToRole="Marksheet" />
+  </EntityType>
+  <Association Name="FK_StudentDetail_BloodGroup">
+    <End Role="BloodGroup" Type="Self.BloodGroup" Multiplicity="0..1" />
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BloodGroup">
+        <PropertyRef Name="BloodGroupId" />
+      </Principal>
+      <Dependent Role="StudentDetail">
+        <PropertyRef Name="BloodGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDetail_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="FacultyID" />
+      </Principal>
+      <Dependent Role="StudentDetail">
+        <PropertyRef Name="FacultyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDetail_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="StudentDetail" Type="Self.StudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="StudentDetail">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BloodGroups" EntityType="Self.BloodGroup" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Faculties" EntityType="Self.Faculty" />
+    <EntitySet Name="Genders" EntityType="Self.Gender" />
+    <EntitySet Name="StudentDetails" EntityType="Self.StudentDetail" />
+    <AssociationSet Name="FK_StudentDetail_BloodGroup" Association="Self.FK_StudentDetail_BloodGroup">
+      <End Role="BloodGroup" EntitySet="BloodGroups" />
+      <End Role="StudentDetail" EntitySet="StudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDetail_Faculty" Association="Self.FK_StudentDetail_Faculty">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="StudentDetail" EntitySet="StudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDetail_Gender" Association="Self.FK_StudentDetail_Gender">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="StudentDetail" EntitySet="StudentDetails" />
+    </AssociationSet>
+    <EntitySet Name="Accounts" EntityType="SMSModel.Account" />
+    <EntitySet Name="Employees" EntityType="SMSModel.Employee" />
+    <EntitySet Name="Frontend_Image" EntityType="SMSModel.Frontend_Image" />
+    <EntitySet Name="Frontend_message" EntityType="SMSModel.Frontend_message" />
+    <EntitySet Name="Marksheets" EntityType="SMSModel.Marksheet" />
+    <EntitySet Name="Notices" EntityType="SMSModel.Notice" />
+    <AssociationSet Name="FK_Employee_Gender" Association="SMSModel.FK_Employee_Gender">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marksheet_Faculty" Association="SMSModel.FK_Marksheet_Faculty">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="Marksheet" EntitySet="Marksheets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marksheet_StudentDetail" Association="SMSModel.FK_Marksheet_StudentDetail">
+      <End Role="StudentDetail" EntitySet="StudentDetails" />
+      <End Role="Marksheet" EntitySet="Marksheets" />
+    </AssociationSet>
+    <FunctionImport Name="inputmarks" EntitySet="Marksheets" ReturnType="Collection(SMSModel.Marksheet)">
+      <Parameter Name="studentId" Mode="In" Type="Int32" />
+      <Parameter Name="facultyId" Mode="In" Type="Int32" />
+      <Parameter Name="first_name" Mode="In" Type="String" />
+      <Parameter Name="middle_name" Mode="In" Type="String" />
+      <Parameter Name="last_name" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountID" />
+    </Key>
+    <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Student_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Student_middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Student_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Amount_Paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GenderId" Type="Int32" />
+    <Property Name="Employee_Date_of_Birth" Type="DateTime" Precision="0" />
+    <Property Name="Employee_Parment_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Mobile_No" Type="Int32" />
+    <Property Name="Employee_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Parents_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Parents_Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Parents_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Employee_Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gender" Relationship="SMSModel.FK_Employee_Gender" FromRole="Employee" ToRole="Gender" />
+  </EntityType>
+  <EntityType Name="Frontend_Image">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Frontend_message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Message_Image_Path" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Message_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Marksheet">
+    <Key>
+      <PropertyRef Name="marksheetID" />
+    </Key>
+    <Property Name="marksheetID" Type="Int32" Nullable="false" />
+    <Property Name="StudentID" Type="Int32" />
+    <Property Name="FacultyID" Type="Int32" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Full_marks" Type="Int32" />
+    <Property Name="Pass_marks" Type="Int32" />
+    <Property Name="Marks_obtain" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Subject_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Faculty" Relationship="SMSModel.FK_Marksheet_Faculty" FromRole="Marksheet" ToRole="Faculty" />
+    <NavigationProperty Name="StudentDetail" Relationship="SMSModel.FK_Marksheet_StudentDetail" FromRole="Marksheet" ToRole="StudentDetail" />
+  </EntityType>
+  <EntityType Name="Notice">
+    <Key>
+      <PropertyRef Name="NoticeId" />
+    </Key>
+    <Property Name="NoticeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Publish_Date" Type="DateTime" Precision="0" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Employee_Gender">
+    <End Type="SMSModel.Gender" Role="Gender" Multiplicity="0..1" />
+    <End Type="SMSModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marksheet_Faculty">
+    <End Type="SMSModel.Faculty" Role="Faculty" Multiplicity="0..1" />
+    <End Type="SMSModel.Marksheet" Role="Marksheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="FacultyID" />
+      </Principal>
+      <Dependent Role="Marksheet">
+        <PropertyRef Name="FacultyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marksheet_StudentDetail">
+    <End Type="SMSModel.StudentDetail" Role="StudentDetail" Multiplicity="0..1" />
+    <End Type="SMSModel.Marksheet" Role="Marksheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudentDetail">
+        <PropertyRef Name="StudentID" />
+      </Principal>
+      <Dependent Role="Marksheet">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
